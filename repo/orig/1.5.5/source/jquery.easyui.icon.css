@@ -1,0 +1,19 @@
+.icon-language {
+	background:url('../../images/ico_16_129.gif') no-repeat center center;
+	background-color: #dedede;
+	border-left: 1px solid  #95b8e7;
+}
+.icon-clock {
+	background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAQtJREFUOI2d0ztKQ1EQBuAvNxHSWFjqFtIZMYVF4hYEwUBSuAkLQbTTHYhLEAQhvaCCRSQqSLagrYWIaPBRnCtebu6RmB+mOPM+M/+UjKOKLSxjMdXd4BoHGGWdk1xwB094wyHqqRzhHS9oFxQFmziJGTM4RTev7ESCm2hFkmz8PKp4jVTbxV7ENkKljG2c4arAqYUSzgtsH1hJhGkPI1X+whCNRFjV7RQJBliCR8xHnJr4KhBYwEMikKQeSXAhzCAv0uqDRGBYbYov1NCHGYFl/8VnphttgRyToof1vLI7YZKezD2UM4b7tKU7gSRzeMYsVrGGS+zg+CeoZBwV4Zwb0j0LO+9j3+8awTev8zZZYLsLDgAAAABJRU5ErkJggg==') no-repeat center center;
+}
+.icon-resume {
+	background:url('../../images/proc_resume.gif') no-repeat center center;
+}
+.icon-suspend {
+	background:url('../../images/proc_suspend.gif') no-repeat center center;
+}
+.icon-stop {
+	background:url('../../images/proc_stop.gif') no-repeat center center;
+}
+
+

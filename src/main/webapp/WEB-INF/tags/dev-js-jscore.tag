@@ -1,0 +1,19 @@
+<script src="/${info.id}/libs/jquery/jquery-3.4.1.js"></script> 
+
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.core.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.router.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.touch.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.view.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.fx.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.data.odata.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.data.xml.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.data.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.data.signalr.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.binder.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.validator.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.userevents.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.draganddrop.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.mobile.scroller.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.resizable.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.sortable.js"></script>
+<script src="/${info.id}/src/${user.version.id}/js/${info.id}.selectable.js"></script>

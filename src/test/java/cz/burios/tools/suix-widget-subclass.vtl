@@ -1,0 +1,13 @@
+#foreach($field in $fields)
+	
+	/**
+$field.comment
+	*/	
+	public final static String $field.name = Suix.$field.name;
+	#if($field.items.size() != 0)
+		public class $field.name {
+		#set($fields = $field.items)
+		#parse("suix-widget-subclass.vtl")
+		}
+	#end
+#end

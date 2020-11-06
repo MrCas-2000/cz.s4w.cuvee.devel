@@ -1,0 +1,73 @@
+[
+	{
+		"id": "MN_X_DOCS_LAYOUT",
+		"parentId": "MN_X_DOCS",
+		"label": "Layout",
+		"cssIcon": "",
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_CONTAINERS",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Containers",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_CONTAINERS", "templatePath": "/dev/styles/layout/containers.jsp" },
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_DISPLAY",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Display \u0026 visibility",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_DISPLAY", "templatePath": "/dev/styles/layout/display.jsp" },
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_FLEX",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Flex",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_FLEX", "templatePath": "/dev/styles/layout/flex.jsp" },
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_FLOAT",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Float",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_FLOAT", "templatePath": "/dev/styles/layout/float.jsp" },
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_GRID",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Grid",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_GRID", "templatePath": "/dev/styles/layout/grid.jsp" },
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_POSITION",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Position",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_POSITION", "templatePath": "/dev/styles/layout/position.jsp" },
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_SIZING",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Sizing",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_SIZING", "templatePath": "/dev/styles/layout/sizing.jsp" },
+		"href": ""
+	},
+	{
+		"id": "MN_X_DOCS_LAYOUT_SPACING",
+		"parentId": "MN_X_DOCS_LAYOUT",
+		"label": "Spacing",
+		"cssIcon": "",
+		"modul": { "id": "MN_X_DOCS_LAYOUT_SPACING", "templatePath": "/dev/styles/layout/spacing.jsp" },
+		"href": ""
+	}
+]
