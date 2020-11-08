@@ -1,60 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%>
-
 <!DOCTYPE html>
-<html>
-<head>
-	<w:main-page-init></w:main-page-init>
+	<w:main-page-init/>
 	
-	<link rel="stylesheet" href="${user.baseUri}/libs/app/${info.id}/css/${info.id}.core.layout.css" type="text/css" media="all" />			
-	<link rel="stylesheet" href="${user.baseUri}/libs/app/application.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="${user.baseUri}/libs/app/desktop.css" type="text/css" media="all" />
-	
-	<script src="${user.baseUri}/libs/app/${info.id}/js/${info.id}.navigate.js"></script>
-	
-	<script src="${user.baseUri}/libs/app/application.js"></script>
-	<script src="${user.baseUri}/libs/app/desktop.js"></script>
-</head>
-<body class="k-content h-vh-100 no-overflow-md m-0 p-0">
-	<w:desktop-topbar/>
-	<div id="desktop_sidebar" class="sidebar">
-		<div id="desktopMenu" style=" height: 100%;">
-
-		</div>
-		<script type="text/x-suix-template" id="desktopMenuTemplate">
-			<div id="#:id#" class="desktop-menu-item #:type#">
-				<span class="desktop-menu-item-icon #:cssIcon#"></span><span >#:label#</span>
-			</div>
-		</script>
-		<%--  --%>
-	</div>
-	<div id="desktopContent" style="position: fixed; left: 0; right: 0; top: 40px; bottom: 2px; height: calc(100% - 43px); overflow: hidden;">
-		<div id="desktop_breadcrumb" style="height: 28px; border-bottom: 1px solid #e9e9e9;"></div>
-		<script>
-		$(function(){
-			$("#desktop_breadcrumb").suixBreadcrumb({
-				items: [{
-					type: "rootitem",
-					href: "",
-					text: "",
-					showText: true,
-					icon: "home",
-					showIcon: true
-				}]			
-			});
-		});
-		</script>
-		<div style="position: absolute; top: 32px; bottom: 0; left: 0; right: 0; overflow: hidden;">
-			<iframe id="modules_view" src="" width="100%" height="99.8%" frameborder="0"></iframe>
-		</div>
-	</div>
+	<link  href="/cuvee/libs/bootstrap/bootstrap-treeview.css" rel="stylesheet"/>
+	<script src="/cuvee/libs/bootstrap/bootstrap-treeview.js"></script>
+	<link  href="/cuvee/libs/app/desktop.css"rel="stylesheet" rel="stylesheet"/>
+	<script src="/cuvee/libs/app/desktop.js"></script>
 	<script>
-		var baseUri = "${user.baseUri}";
-		$(function(){
-			$("#modules_view").attr("src", baseUri + "/modul/HOME");
-		});
+		var baseUri = "${user.baseUri}";	
 	</script>
+</head>
+<body>
+	<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0 navbar-expand-md" style="background-color: #336699;">
+		<div class="navbar-brand d-flex align-items-center justify-content-between col-12 col-md-3 col-lg-2 mr-0">
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav">
+				<span class="fa fa-bars"></span>
+			</button>
+			<a class="text-light" href="${user.baseUri}/">
+				<img src="${user.baseUri}/favicon.png" width="24px" height="24px" style="margin-top: 0px;">
+				<b style="font-size: 16px; padding: 0 5px;">${ info.title }</b>			
+			</a>
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#topnav">
+				<span class="fa fa-ellipsis-v"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse" id="topnav">
+			<ul class="navbar-nav"></ul>
+			<ul class="navbar-nav ml-auto px-3 py-2">
+				<li class="nav-item text-nowrap">
+					<a class="nav-link" href="javascript:void(0);">
+						<i class="fa fa-user-circle-o"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row navbar-expand-md">
+			<nav class="col-md-3 col-lg-2 navbar-collapse collapse sidebar" id="sidenav">
+				<div id="menu" class="sidebar sidebar-sticky flex-column m-0 p-0" style="background-color: #e4e7eb;">
+					<div id="treeMenu" style="min-width: 200px;"></div>				
+					<script type="text/javascript">
+					$("#treeMenu").treeview({
+						data: [{
+							text: "Form",
+							nodes: [{
+								href: "javascript:Desktop.mainMenuClick('MN_DEV_NUMBERBOX')",
+								text: "numberbox"
+							}, {
+								href: "javascript:Desktop.mainMenuClick('MN_DEV_CURRENCYBOX')",
+								text: "currencybox"
+							}]
+						}]
+					});
+					</script>
+				</div>
+			</nav>
+			<div id="modulContainer" class="col-md-9 col-lg-10 m-0 p-0" style="background-color: #fff; position: fixed; top: 3.5em; bottom: 0; right: 0;">
+				<iframe id="ifrModulContainer" src="" style="width: 99.8%; height: 99.8%;" frameborder="0"></iframe>
+			</div>
+		</div>	
+	</div>
 </body>
 </html>

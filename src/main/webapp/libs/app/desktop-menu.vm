@@ -1,0 +1,26 @@
+<div class="pl-0 pr-0 collapse show" id="desktop-menu">
+	<div class="list-group panel">
+		<a href="javascript:desktop_onMenuClick('MN-A-0100000001')" id="MN-X-0100000001" class="list-group-item" data-parent="#desktop-menu"><i class="fa fa-home fa-fw"></i> Projekty </a>
+		<a href="javascript:desktop_onMenuClick('MN-A-0100000002')" id="MN-X-0100000002" class="list-group-item" data-parent="#desktop-menu"><i class="fa fa-sitemap fa-fw"></i> Rodokmen </a>
+		<a href="#MN-X-0300000000" class="list-group-item collapsed" data-toggle="collapse" data-parent="#desktop-menu" aria-expanded="false">
+			<span class="ml-1 hidden-sm-down"> Obecné </span>
+		</a>
+		<div class="collapse" id="MN-X-0300000000">
+			<a href="javascript:desktop_onMenuClick('MN-A-0200000001')" id="MN-X-0200000001" class="list-group-item" data-parent="#MN-X-0300000000"><i class="fa fa-users fa-fw"></i> Osoby </a>
+			<a href="javascript:desktop_onMenuClick('MN-A-0200000002')" id="MN-X-0200000002" class="list-group-item" data-parent="#MN-X-0300000000"><i class="fa-venus-mars fa-fw"></i> Rodiny </a>
+			<a href="javascript:desktop_onMenuClick('MN-A-0200000003')" id="MN-X-0200000003" class="list-group-item" data-parent="#MN-X-0300000000"><i class="fa-share-alt fa-fw"></i> Vztahy </a>
+			<a href="javascript:desktop_onMenuClick('MN-A-0200000004')" id="MN-X-0200000004" class="list-group-item" data-parent="#MN-X-0300000000"><i class="fa fa-history fa-fw"></i> Události </a>
+		</div>
+		
+		<a href="#MN-X-9000000000" class="list-group-item collapsed" data-toggle="collapse" data-parent="#desktop-menu" aria-expanded="false">
+			<span class="ml-1 hidden-sm-down"> Nastavení </span>
+		</a>
+		<div class="collapse" id="MN-X-9000000000">
+			<a href="#MN-X-9001000000" class="list-group-item" data-toggle="collapse" aria-expanded="false"> Administrace </a>
+			<div class="collapse" id="MN-X-9001000000">
+				<a href="javascript:desktop_onMenuClick('MN-A-9001000011')" id="MN-X-9001000011" class="list-group-item" data-parent="#MN-X-9001000000"><i class="fa fa-language fa-fw"></i> Slovník </a>
+			</div>
+		</div>
+		<a href="javascript:desktop_onMenuClick('MN-A-9999999999')" id="MN-X-9999999999" class="list-group-item collapsed" data-parent="#desktop-menu"><i class="fa fa-info fa-fw"></i><span> O programu </span></a>
+	</div>
+</div>

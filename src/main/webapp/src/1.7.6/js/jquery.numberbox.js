@@ -84,6 +84,18 @@
 			keypress: function(e) {
 				var _17 = e.data.target;
 				var _18 = $(_17).numberbox("options");
+				/*
+$('#target').keypress(function(e){
+    if (e.which == 97)
+        this.value = this.value + String.fromCharCode(98)
+    else
+        this.value = this.value + String.fromCharCode(e.which)
+
+    ....
+
+    return false;
+})				
+				 */
 				return _18.filter.call(_17, e);
 			}, blur: function(e) {
 				$(e.data.target).numberbox("fix");

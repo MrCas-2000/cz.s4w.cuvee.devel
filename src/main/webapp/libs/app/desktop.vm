@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	#parse("app/main-page-init.vm")
+	
+	<link rel="stylesheet" href="${uCtx.baseUri}/libs/bootstrap/bootstrap-treeview.css" type="text/css" media="all" />
+	<style type="text/css">
+	#include("/app/page/desktop.css")
+	#include("/app/page/desktop-menu.css")
+	</style>
+
+	<script src="${uCtx.baseUri}/libs/bootstrap/bootstrap-treeview.js"></script>
+	<script>
+	var baseUri = "${uCtx.baseUri}";
+	#include("/app/page/desktop.js")
+	#include("/app/page/desktop-menu.js")
+	</script>
+</head>
+<body>
+	<input type="hidden" id="projectId" name="projectId" value="$uCtx.urrentProjectId">
+	
+	<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0 navbar-expand-md" style="background-color: cadetblue;">
+		<div class="navbar-brand d-flex align-items-center justify-content-between col-12 col-md-3 col-lg-2 mr-0">
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav">
+				<span class="fa fa-bars"></span>
+			</button>
+			<a class="text-light" href="${uCtx.baseUri}/">
+				<img src="${uCtx.baseUri}/favicon.png" width="24px" height="24px" style="margin-top: 0px;">
+				<b style="font-size: 16px; padding: 0 5px;">$messages.get("DC-X-000000000000001", "")</b>			
+			</a>
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#topnav">
+				<span class="fa fa-ellipsis-v"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse" id="topnav">
+			<ul class="navbar-nav"></ul>
+			<ul class="navbar-nav ml-auto px-3 py-2">
+				<li class="nav-item text-nowrap">
+					<a class="nav-link" href="javascript:void(0);">
+						<i class="fa fa-user-circle-o"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row navbar-expand-md">
+			<nav class="col-md-3 col-lg-2 navbar-collapse collapse sidebar" id="sidenav">
+				<div id="menu" class="sidebar sidebar-sticky flex-column w-100 m-0 p-0" style="background-color: #e4e7eb;">
+				#parse("/app/page/desktop-menu.vm")
+				</div>
+			</nav>
+			<div id="modulContainer" class="col-md-9 col-lg-10 m-0 p-0" style="background-color: #fff; position: fixed; top: 3.5em; bottom: 0; right: 0;">
+				<iframe id="ifrModulContainer" src="${uCtx.baseUri}/app/page/project/main" style="width: 99.8%; height: 99.8%;" frameborder="0"></iframe>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+#desktop-menu .list-group-item {
+	border-radius: 0;
+	background-color: #e4e7eb;
+	color: #333;
+	border-left: 0;
+	border-right: 0;
+	border-color: #e4e7eb;
+	white-space: nowrap;
+}
+
+/* highlight active menu */
+#desktop-menu .list-group-item:not(.collapsed) {
+	background-color: #e4e7eb;
+}
+
+/* closed state */
+#desktop-menu .list-group .list-group-item[aria-expanded="false"]::after {
+	content: " \f0d7";
+	font-family: FontAwesome;
+	display: inline;
+	text-align: right;
+	padding-left: 5px;
+}
+
+/* open state */
+#desktop-menu .list-group .list-group-item[aria-expanded="true"] {
+	background-color: #e4e7eb;
+}
+#desktop-menu .list-group .list-group-item[aria-expanded="true"]::after {
+	content: " \f0da";
+	font-family: FontAwesome;
+	display: inline;
+	text-align: right;
+	padding-left: 5px;
+}
+
+/* level 1*/
+#desktop-menu .list-group .collapse .list-group-item  {
+	padding-left: 30px;
+}
+
+/* level 2*/
+#desktop-menu .list-group .collapse > .collapse .list-group-item {
+	padding-left: 50px;
+}
+
+/* level 3*/
+#desktop-menu .list-group .collapse > .collapse > .collapse .list-group-item {
+	padding-left: 70px;
+}
+
+#desktop-menu.collapse {
+	-webkit-transition-timing-function: ease;
+		 -o-transition-timing-function: ease;
+			transition-timing-function: ease;
+	-webkit-transition-duration: .2s;
+		 -o-transition-duration: .2s;
+		 	transition-duration: .2s;
+}
+
+#desktop-menu.collapsing {
+  opacity: 0.8;
+  width: 0;
+  -webkit-transition-timing-function: ease-in;
+       -o-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transition-property: width;
+       -o-transition-property: width;
+          transition-property: width;
+
+}

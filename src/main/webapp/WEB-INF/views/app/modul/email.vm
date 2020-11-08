@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	#parse("app/base-head.vm")
+	<style type="text/css">
+	html, body {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+	}
+	</style>	
+</head>
+<body>
+	<div class="w3-cell-row" style="height:100%;">
+		<div class="w3-container w3-red w3-cell" style="width:25%;">			
+			<p>Pošta - List</p>
+		</div>
+		<div class="w3-container w3-green w3-cell w3-cell-middle">
+			<p>Detail</p>
+		</div>
+	</div>
+</body>
+</html>

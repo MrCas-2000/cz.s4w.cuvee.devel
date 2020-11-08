@@ -1,0 +1,38 @@
+<div style="height: 80px; background-color: gray;">
+	<div class="w3-bar w3-light-grey w3-leftbar w3-border-blue" style="height:100%;">
+		<img src="${contact.getAvatarURL()}" class="w3-bar-item w3-circle" style="width:80px">
+		<div class="w3-bar-item">
+			<span class="w3-large">$contact.getDisplayName()</span><br>
+			<span>$contact.getCity() ($contact.getUsername())</span>
+		</div>
+	</div>			
+</div>
+<div id="messagesList" style="height: calc(100% - 181px); width: 100%; overflow: auto;">
+	##MESSAGES
+	#foreach($item in $chatMsgs)
+	<div class="w3-card">
+		<header class="w3-container w3-light-blue">
+			<p>$item.time</p>
+		</header>
+		<div class="w3-container">
+			<p>$item.content</p>
+		</div>
+	</div>
+	#end
+</div>
+<div class="w3-border-top" style="height: 100px; width: 100%; overflow: hidden;">
+	<div class="w3-display-container" style="height:100%;">
+		<div class="w3-display-left w3-padding-16" style="height: 100%; width: calc(100% - 70px);">
+			<form class="w3-container">
+				<label class="w3-text">Zpráva</label>
+				<input class="w3-input" type="text" id="fldSypeMessage" name="SKYPE_MESSAGE" data-username="$contact.getUsername()">
+			</form>
+		</div>
+		<div class="w3-display-right w3-padding-16" style="height: 100%; width: 70px;">
+			<div style="height: 25%;"></div>
+			<a href="javascript:void(0);" class="w3-button w3-blue w3-round-xxlarge" onclick="sentMessage();">
+				<i class="fa fa-paper-plane-o" style="font-size:32px;"></i>
+			</a>
+		</div>
+	</div>
+</div>
