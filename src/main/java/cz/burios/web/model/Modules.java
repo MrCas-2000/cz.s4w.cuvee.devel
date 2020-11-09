@@ -29,30 +29,13 @@ public class Modules implements Serializable {
 	}
 
 	public List<Modul> reloadRecords(String version) {
-		// System.out.println("Modules.reloadRecords().version: " + version);
 		this.versionId = version;
 		try {
-			InputStream	is = this.getClass().getResourceAsStream("/cz/burios/web/model/" + version + "/modules-api.json");
+			InputStream	is = this.getClass().getResourceAsStream("/cz/burios/web/model/1.7.6/modules-dev.json");
 			String json = IOUtils.toString(is, StandardCharsets.UTF_8);
 			records = new Gson().fromJson(json, new TypeToken<List<Modul>>(){}.getType());
 			
 			records.add(new Modul("", "/main-welcome.jsp"));
-			
-			is = this.getClass().getResourceAsStream("/cz/burios/web/model/" + version + "/modules-demo.json");
-			json = IOUtils.toString(is, StandardCharsets.UTF_8);
-			records.addAll(new Gson().fromJson(json, new TypeToken<List<Modul>>(){}.getType()));
-			
-			is = this.getClass().getResourceAsStream("/cz/burios/web/model/" + version + "/modules-controls.json");
-			json = IOUtils.toString(is, StandardCharsets.UTF_8);
-			records.addAll(new Gson().fromJson(json, new TypeToken<List<Modul>>(){}.getType()));
-
-			is = this.getClass().getResourceAsStream("/cz/burios/web/model/" + version + "/modules-styles.json");
-			json = IOUtils.toString(is, StandardCharsets.UTF_8);
-			records.addAll(new Gson().fromJson(json, new TypeToken<List<Modul>>(){}.getType()));
-
-			is = this.getClass().getResourceAsStream("/cz/burios/web/model/" + version + "/modules-dev.json");
-			json = IOUtils.toString(is, StandardCharsets.UTF_8);
-			records.addAll(new Gson().fromJson(json, new TypeToken<List<Modul>>(){}.getType()));
 
 		} catch (Exception e) {
 			e.printStackTrace();

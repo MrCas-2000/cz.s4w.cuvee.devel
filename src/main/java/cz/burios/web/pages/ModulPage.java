@@ -37,7 +37,7 @@ public class ModulPage {
 				
 			}
 			String tmplPath = getTemplatePath(id);
-			System.out.println("ModulPage.page().tmplPath: " + tmplPath);
+			// System.out.println("ModulPage.page().tmplPath: " + tmplPath);
 			view = new Viewable(tmplPath);
 		} catch (Exception e) {
 			e.printStackTrace();
