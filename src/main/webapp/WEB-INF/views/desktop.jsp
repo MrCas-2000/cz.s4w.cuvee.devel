@@ -9,8 +9,10 @@
 	<link href="/cuvee/libs/awesome/css/font-awesome.min.css" rel="stylesheet"/>
 	<link href="/cuvee/libs/app/desktop.css" rel="stylesheet"/>
 	<link href="/cuvee/libs/app/desktop-menu.css" rel="stylesheet"/>
+	<link href="/cuvee/libs/bootstrap/4.1.1/plugin/bootstrap-treeview.css" rel="stylesheet"/>
 	<script src="/cuvee/libs/app/desktop.js"></script>
 	<script src="/cuvee/libs/app/desktop-menu.js"></script>
+	<script src="/cuvee/libs/bootstrap/4.1.1/plugin/bootstrap-treeview.js"></script>
 	<script>
 		var baseUri = "${user.baseUri}";	
 	</script>
@@ -44,6 +46,50 @@
 		<div class="row navbar-expand-md">
 			<nav class="col-md-3 col-lg-2 navbar-collapse collapse sidebar" id="sidenav">
 				<div id="menu" class="sidebar sidebar-sticky flex-column m-0 p-0" style="background-color: #e4e7eb;">
+					<div id="tree"></div>
+					<script type="text/javascript">
+						var treeData = [{
+							id: "MN_DEV",
+							text: "Devel",
+							nodes: [{
+								id: "MN_DEV_FORMS",
+								text: "Forms",
+								nodes: [{
+									id: "MN_DEV_NUMBERBOX",
+									text: "NumberBox"
+								}, {
+									id: "MN_DEV_MONEYNUMBERBOX",
+									text: "MoneyNumberBox"
+								}]
+							}, {
+								id: "MN_DEV_LAYOUTS",
+								text: "Layouts",
+								nodes: [{
+									id: "MN_DEV_LAYOUT",
+									text: "Layout"
+								}, {
+									id: "MN_DEV_TABS",
+									text: "Tabs"
+								}]
+							}]
+						}, {
+							id: "MN_CONTACTS",
+							text: "Contacts",
+							icon: "	fa fa-address-card-o"
+						}, {
+							id: "MN_ABOUT",
+							text: "About",
+							icon: "fa fa-exclamation-circle"
+						}];
+						$('#tree').treeview({
+							data: treeData,
+							levels: 5,
+							onNodeSelected: function(event, data) {
+								Desktop.onTreeMenuClick(event, data);
+							}
+						});
+					</script>
+					<%--
 					<ul class="menu">
 						<li>
 							<a class="caret" href="javascript:void(0);">Devel</a>
@@ -95,6 +141,7 @@
 							</ul>
 						</li>
 					</ul>	
+					 --%>
 				</div>
 			</nav>
 			<div id="modulContainer" class="col-md-9 col-lg-10 m-0 p-0" style="background-color: #fff; position: fixed; top: 3.5em; bottom: 0; right: 0;">

@@ -82,21 +82,27 @@
 	$.fn.numberbox.defaults = $.extend({}, $.fn.textbox.defaults, {
 		inputEvents: {
 			keypress: function(e) {
-				var _17 = e.data.target;
-				var _18 = $(_17).numberbox("options");
+				console.log("numberbox.keypress: ", e);
+				var target = e.data.target;
+				var _18 = $(target).numberbox("options");
+				var key = e.originalEvent.keyCode;
+				if (key == 44) {
+					// this.value = this.value + String.fromCharCode(98)
+					// target.value = target.value + String.fromCharCode(46);
+					console.log("numberbox.keypress.target: ", target.value);
+					return false;
+				} else {
+					return _18.filter.call(target, e);
+				}
 				/*
-$('#target').keypress(function(e){
-    if (e.which == 97)
-        this.value = this.value + String.fromCharCode(98)
-    else
-        this.value = this.value + String.fromCharCode(e.which)
-
-    ....
-
-    return false;
-})				
+				$('#target').keypress(function(e){
+				    if (e.which == 97)
+				        this.value = this.value + String.fromCharCode(98)
+				    else
+				        this.value = this.value + String.fromCharCode(e.which)
+				    return false;
+				})				
 				 */
-				return _18.filter.call(_17, e);
 			}, blur: function(e) {
 				$(e.data.target).numberbox("fix");
 			}, keydown: function(e) {
@@ -110,7 +116,7 @@ $('#target').keypress(function(e){
 			if (e.metaKey || e.ctrlKey) {
 				return true;
 			}
-			if ($.inArray(String(e.which), ["46", "8", "13", "0"]) >= 0) {
+			if ($.inArray(String(e.which), ["41", "46", "8", "13", "0"]) >= 0) {
 				return true;
 			}
 			var tmp = $("<span></span>");

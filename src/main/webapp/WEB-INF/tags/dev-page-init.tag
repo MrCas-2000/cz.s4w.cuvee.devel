@@ -9,7 +9,7 @@
 	<title>${info.title}</title>
 	<link rel="icon" href="${user.baseUri}/favicon.png">
 	
-	<link rel="stylesheet" href="${user.baseUri}/build/themes/default/easyui.css" media="all"/>
+	<link rel="stylesheet" href="${user.baseUri}/src/1.5.5/build/themes/default/easyui.css" media="all"/>
 
 
 	<style> 
@@ -17,7 +17,7 @@
 	</style>
 
 	<script src="${user.baseUri}/libs/jquery/jquery-3.3.1.js"></script>
-	<script src="${user.baseUri}/build/js/jquery.easyui.js"></script>
+	<script src="${user.baseUri}/src/1.5.5/build/js/jquery.easyui.js"></script>
 	<script>
 		var appBaseUri = "${user.baseUri}";
 	</script>

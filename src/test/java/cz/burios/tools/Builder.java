@@ -82,7 +82,6 @@ public class Builder {
 				new File(srcRootDir + "/jquery.draggable.js"),
 				new File(srcRootDir + "/jquery.droppable.js"),
 				new File(srcRootDir + "/jquery.resizable.js"),
-				new File(srcRootDir + "/jquery.messager.js"),
 				
 				new File(srcRootDir + "/jquery.linkbutton.js"),
 				new File(srcRootDir + "/jquery.pagination.js"),
@@ -92,6 +91,7 @@ public class Builder {
 				new File(srcRootDir + "/jquery.panel.js"),
 				new File(srcRootDir + "/jquery.window.js"),
 				new File(srcRootDir + "/jquery.dialog.js"),
+				new File(srcRootDir + "/jquery.messager.js"),
 				new File(srcRootDir + "/jquery.accordion.js"),
 				new File(srcRootDir + "/jquery.tabs.js"),
 				new File(srcRootDir + "/jquery.layout.js"),

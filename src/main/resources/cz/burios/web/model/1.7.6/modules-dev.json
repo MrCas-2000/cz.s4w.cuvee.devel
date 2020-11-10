@@ -25,6 +25,7 @@
 	{ "id": "MN_DEV_MESSAGER", "templatePath": "/dev/js/web/messager.jsp" },
 	{ "id": "MN_DEV_MOBILE", "templatePath": "/dev/js/web/mobile.jsp" },
 	{ "id": "MN_DEV_NUMBERBOX", "templatePath": "/dev/js/web/numberbox.jsp" },
+	{ "id": "MN_DEV_MONEYNUMBERBOX", "templatePath": "/dev/js/web/moneynumberbox.jsp" },
 	{ "id": "MN_DEV_NUMBERSPINNER", "templatePath": "/dev/js/web/numberspinner.jsp" },
 	{ "id": "MN_DEV_PAGINATION", "templatePath": "/dev/js/web/pagination.jsp" },
 	{ "id": "MN_DEV_PANEL", "templatePath": "/dev/js/web/panel.jsp" },

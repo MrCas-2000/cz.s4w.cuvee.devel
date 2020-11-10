@@ -6,25 +6,18 @@
 <html>
 <head>
 	<w:dev-page-init/>
+	<script src="${user.baseUri}/src/1.5.5/build/js/jquery.moneynumberbox.js"></script>
 </head>
 <body>
-	<h2 style="color: red;">NumberBox - Basic usage</h2>
+	<h2 style="color: red;">MoneyNumberBox - Basic usage</h2>
 	<div>
-		<h4>NumberBox</h4>
-		<%--
-		<input type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2">
-		--%>
-		<input id="nn" value="32.256" >
-		<script>
-			$("#nn").numberbox({ min:0, precision:2 });		
-		</script>
+		<h4>MoneyNumberBox</h4>
 		<input id="nn1" value="10.0" >
 		<script>
-			$("#nn1").numberbox({ 
+			$("#nn1").moneynumberbox({ 
 				precision:2
 			});		
 		</script>
-		
-	</div>
+    </div>
 </body>
 </html>
