@@ -536,7 +536,26 @@
 		return $.extend({}, $.fn.validatebox.parseOptions(_69), $.parser.parseOptions(_69, ["prompt", "iconCls", "iconAlign", "buttonText", "buttonIcon", "buttonAlign", "label", "labelPosition", "labelAlign", { multiline: "boolean", iconWidth: "number", labelWidth: "number" }]), { value: (t.val() || undefined), type: (t.attr("type") ? t.attr("type") : undefined) });
 	};
 	$.fn.textbox.defaults = $.extend({}, $.fn.validatebox.defaults, {
-		doSize: true, width: "auto", height: "auto", cls: null, prompt: "", value: "", type: "text", multiline: false, icons: [], iconCls: null, iconAlign: "right", iconWidth: 26, buttonText: "", buttonIcon: null, buttonAlign: "right", label: null, labelWidth: "auto", labelPosition: "before", labelAlign: "left", inputEvents: {
+		doSize: true, 
+		width: "auto", 
+		height: "auto", 
+		cls: null, 
+		prompt: "", 
+		value: "", 
+		type: "text", 
+		multiline: false, 
+		icons: [], 
+		iconCls: null, 
+		iconAlign: "right", 
+		iconWidth: 26, 
+		buttonText: "", 
+		buttonIcon: null, 
+		buttonAlign: "right", 
+		label: null, 
+		labelWidth: "auto", 
+		labelPosition: "before", 
+		labelAlign: "left", 
+		inputEvents: {
 			blur: function(e) {
 				var t = $(e.data.target);
 				var _6a = t.textbox("options");
