@@ -49,5 +49,9 @@
 	{ "id": "MN_DEV_TREE", "templatePath": "/dev/js/web/tree.jsp" },
 	{ "id": "MN_DEV_TREEGRID", "templatePath": "/dev/js/web/treegrid.jsp" },
 	{ "id": "MN_DEV_VALIDATEBOX", "templatePath": "/dev/js/web/validatebox.jsp" },
-	{ "id": "MN_DEV_WINDOW", "templatePath": "/dev/js/web/window.jsp" }
+	{ "id": "MN_DEV_WINDOW", "templatePath": "/dev/js/web/window.jsp" },
+	
+	{ "id": "MN_DEVTLD_NUMBERBOX", "templatePath": "/dev/tlds/numberbox.jsp" },
+	{ "id": "MN_DEVTLD_MONEYNUMBERBOX", "templatePath": "/dev/tlds/numberbox.jsp" },
+	{ "id": "MN_DEVTLD_WINDOW", "templatePath": "/dev/tlds/window.jsp" }	
 ]

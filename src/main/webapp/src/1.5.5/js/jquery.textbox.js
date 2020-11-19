@@ -297,61 +297,61 @@
 		_3f.validatebox("readonly", _3e.readonly);
 		tb.removeClass("textbox-readonly").addClass(_3e.readonly ? "textbox-readonly" : "");
 	};
-	$.fn.textbox = function(_40, _41) {
-		if (typeof _40 == "string") {
-			var _42 = $.fn.textbox.methods[_40];
-			if (_42) {
-				return _42(this, _41);
+	$.fn.textbox = function(options, param) {
+		if (typeof options == "string") {
+			var method = $.fn.textbox.methods[options];
+			if (method) {
+				return method(this, param);
 			} else {
 				return this.each(function() {
-					var _43 = $(this).textbox("textbox");
-					_43.validatebox(_40, _41);
+					var text = $(this).textbox("textbox");
+					text.validatebox(options, param);
 				});
 			}
 		}
-		_40 = _40 || {};
+		options = options || {};
 		return this.each(function() {
-			var _44 = $.data(this, "textbox");
-			if (_44) {
-				$.extend(_44.options, _40);
-				if (_40.value != undefined) {
-					_44.options.originalValue = _40.value;
+			var state = $.data(this, "textbox");
+			if (state) {
+				$.extend(state.options, options);
+				if (options.value != undefined) {
+					state.options.originalValue = options.value;
 				}
 			} else {
-				_44 = $.data(this, "textbox", { options: $.extend({}, $.fn.textbox.defaults, $.fn.textbox.parseOptions(this), _40), textbox: _2(this) });
-				_44.options.originalValue = _44.options.value;
+				state = $.data(this, "textbox", { options: $.extend({}, $.fn.textbox.defaults, $.fn.textbox.parseOptions(this), options), textbox: _2(this) });
+				state.options.originalValue = state.options.value;
 			}
 			_6(this);
 			_28(this);
-			if (_44.options.doSize) {
+			if (state.options.doSize) {
 				_12(this);
 			}
-			var _45 = _44.options.value;
-			_44.options.value = "";
-			$(this).textbox("initValue", _45);
+			var value = state.options.value;
+			state.options.value = "";
+			$(this).textbox("initValue", value);
 		});
 	};
 	$.fn.textbox.methods = {
 		options: function(jq) {
 			return $.data(jq[0], "textbox").options;
-		}, cloneFrom: function(jq, _46) {
+		}, cloneFrom: function(jq, target) {
 			return jq.each(function() {
 				var t = $(this);
 				if (t.data("textbox")) {
 					return;
 				}
-				if (!$(_46).data("textbox")) {
-					$(_46).textbox();
+				if (!$(target).data("textbox")) {
+					$(target).textbox();
 				}
-				var _47 = $.extend(true, {}, $(_46).textbox("options"));
+				var _47 = $.extend(true, {}, $(target).textbox("options"));
 				var _48 = t.attr("name") || "";
 				t.addClass("textbox-f").hide();
 				t.removeAttr("name").attr("textboxName", _48);
-				var _49 = $(_46).next().clone().insertAfter(t);
+				var _49 = $(target).next().clone().insertAfter(t);
 				var _4a = "_easyui_textbox_input" + (++_1);
 				_49.find(".textbox-value").attr("name", _48);
 				_49.find(".textbox-text").attr("id", _4a);
-				var _4b = $($(_46).textbox("label")).clone();
+				var _4b = $($(target).textbox("label")).clone();
 				if (_4b.length) {
 					_4b.attr("for", _4a);
 					if (_47.labelPosition == "after") {
@@ -361,7 +361,7 @@
 					}
 				}
 				$.data(this, "textbox", { options: _47, textbox: _49, label: (_4b.length ? _4b : undefined) });
-				var _4c = $(_46).textbox("button");
+				var _4c = $(target).textbox("button");
 				if (_4c.length) {
 					t.textbox("button").linkbutton($.extend(true, {}, _4c.linkbutton("options")));
 				}
@@ -515,25 +515,25 @@
 		}, setSelectionRange: function(jq, _65) {
 			return jq.each(function() {
 				var _66 = $(this).textbox("textbox")[0];
-				var _67 = _65.start;
+				var start = _65.start;
 				var end = _65.end;
 				if (_66.setSelectionRange) {
-					_66.setSelectionRange(_67, end);
+					_66.setSelectionRange(start, end);
 				} else {
 					if (_66.createTextRange) {
 						var _68 = _66.createTextRange();
 						_68.collapse();
 						_68.moveEnd("character", end);
-						_68.moveStart("character", _67);
+						_68.moveStart("character", start);
 						_68.select();
 					}
 				}
 			});
 		}
 	};
-	$.fn.textbox.parseOptions = function(_69) {
-		var t = $(_69);
-		return $.extend({}, $.fn.validatebox.parseOptions(_69), $.parser.parseOptions(_69, ["prompt", "iconCls", "iconAlign", "buttonText", "buttonIcon", "buttonAlign", "label", "labelPosition", "labelAlign", { multiline: "boolean", iconWidth: "number", labelWidth: "number" }]), { value: (t.val() || undefined), type: (t.attr("type") ? t.attr("type") : undefined) });
+	$.fn.textbox.parseOptions = function(target) {
+		var t = $(target);
+		return $.extend({}, $.fn.validatebox.parseOptions(target), $.parser.parseOptions(target, ["prompt", "iconCls", "iconAlign", "buttonText", "buttonIcon", "buttonAlign", "label", "labelPosition", "labelAlign", { multiline: "boolean", iconWidth: "number", labelWidth: "number" }]), { value: (t.val() || undefined), type: (t.attr("type") ? t.attr("type") : undefined) });
 	};
 	$.fn.textbox.defaults = $.extend({}, $.fn.validatebox.defaults, {
 		doSize: true, 
@@ -568,11 +568,11 @@
 					t.textbox("setValue", t.textbox("getText"));
 				}
 			}
-		}, onChange: function(_6b, _6c) {
-		}, onResizing: function(_6d, _6e) {
-		}, onResize: function(_6f, _70) {
+		}, onChange: function(newValue, oldValue) {
+		}, onResizing: function(width, height) {
+		}, onResize: function(width, height) {
 		}, onClickButton: function() {
-		}, onClickIcon: function(_71) {
+		}, onClickIcon: function(index) {
 		}
 	});
 })(jQuery);

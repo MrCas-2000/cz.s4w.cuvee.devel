@@ -9,7 +9,7 @@
 	<title>${info.title}</title>
 	<link rel="icon" href="${user.baseUri}/favicon.png">
 	
-	<link rel="stylesheet" href="${user.baseUri}/src/1.5.5/build/themes/default/easyui.css" media="all"/>
+	<link rel="stylesheet" href="${user.baseUri}/src/1.5.5/build/themes/metro/easyui.css" media="all"/>
 
 
 	<style> 

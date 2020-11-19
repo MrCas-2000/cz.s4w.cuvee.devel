@@ -71,6 +71,17 @@
 									id: "MN_DEV_TABS",
 									text: "Tabs"
 								}]
+							}, {
+								id: "MN_DEV_TAGLIB",
+								text: "Java TagLibs",
+								nodes: [{
+									id: "MN_DEVTLD_MONEYNUMBERBOX",
+									text: "MoneyNumberBox"
+								}, {
+									id: "MN_DEVTLD_NUMBERBOX",
+									text: "NumberBox"
+								}]
+							
 							}]
 						}, {
 							id: "MN_CONTACTS",
