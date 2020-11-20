@@ -101,13 +101,40 @@
 					return opts.filter.call(target, e);
 				} 
 			}, blur: function(e) {
+				window.console && console.log("moneynumberbox.blur.e: ", e);
 				$(e.data.target).moneynumberbox("fix");
+				var opts = $(e.data.target).moneynumberbox("options");
+				window.console && console.log("moneynumberbox.blur(END)");
+				opts.editorOnChange(e);
+			}, change: function(e) {
+				window.console && console.log("moneynumberbox.change.e: ", e);
+				// $(e.data.target).moneynumberbox("fix");
+				var opts = $(e.data.target).moneynumberbox("options");
+				opts.editorOnChange(e);
+				window.console && console.log("moneynumberbox.change(END)");
+				/*
+				*/
+			}, focus: function(e) {
+				//
+				window.console && console.log("moneynumberbox.focus.e: " , e);
+				var opts = $(e.data.target).moneynumberbox("options");
+				opts.editorOnFocus(e);
 			}, keydown: function(e) {
 				if (e.keyCode == 13) {
 					$(e.data.target).moneynumberbox("fix");
 				}
 			}
-		}, min: null, max: null, precision: 0, decimalSeparator: ".", groupSeparator: "", prefix: "", suffix: "", filter: function(e) {
+		}, 
+		min: null, 
+		max: null, 
+		precision: 2, 
+		decimalSeparator: ".", 
+		groupSeparator: " ", 
+		prefix: "", 
+		suffix: "",
+		editorOnFocus: function(e) {},
+		editorOnChange: function(e) {},
+		filter: function(e) {
 			var opts = $(this).moneynumberbox("options");
 			var s = $(this).moneynumberbox("getText");
 			if (e.metaKey || e.ctrlKey) {
